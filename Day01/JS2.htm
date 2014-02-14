@@ -1,0 +1,82 @@
+﻿<html>
+<head>
+    <script>
+        function alert2() {
+            console.log("What the hell is going on???");
+        }
+        alert("ok");
+
+        confuse();
+        function confuse(a,b,c) {
+            console.log("Confused");
+        }
+        
+        function confuse(a,b,c) {
+            console.log("Thoroughly confused");
+        }
+
+
+        function f(a, b, c) {
+            console.log(a + " " + b);
+        }
+        f();
+        f("ten");
+
+
+        function add() {
+            var total = 0;
+            for (var i = 0; i < arguments.length; i++) { 
+                total += arguments[i];
+            }
+            console.log("Total : " + total);
+        }
+        function largest() {
+            var max = 0;
+            for (var i = 0; i < arguments.length; i++) { 
+                if(max < arguments[i])
+                    max = arguments[i];
+            }
+            console.log("Largest : " + max); 
+        }
+        add(1, 1212, 12, 12, 12, 12, 121);
+        add(1, 1212, 12, 12, 12, 12, 121, 67, 54654, 654, 654, 6, 546);
+        add(1324, 124, 124, 124);
+
+        largest(1, 1212, 12, 12, 12, 12, 121);
+        largest(1, 1212, 12, 12, 12, 12, 121, 67, 54654, 654, 654, 6);
+        largest(1324, 124, 124, 124);
+
+        //Function hoisting
+        function wasteTime() {
+            console.log("****Wasting time");
+            for (var i = 0; i < arguments.length; i++) {
+                console.log(arguments[i]);
+            }
+        }
+        wasteTime();
+        wasteTime("IPL");
+        wasteTime("Movies", "Cricket");
+        wasteTime(24, 7);
+        wasteTime("Go to office");
+
+
+        work();
+        
+        function eat(items) {
+            console.log("Eating " + items);
+        }
+        eat("Roti");
+        
+        function sleep() {
+            return "Sleeping";
+        }
+        console.log(sleep());
+        function work() {
+            console.log("Trying to work");
+        }
+    </script>
+</head>
+<body>
+
+</body>
+</html>

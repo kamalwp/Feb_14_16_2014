@@ -1,0 +1,26 @@
+﻿<html>
+<head>
+    <script>
+        //Higher-order functions
+        function confuse() {
+            return function () {
+                console.log("Pleassssssssssse leave me");
+            };
+        }
+        var f = confuse();
+        f();
+        function work(arg) {
+            arg();
+        }
+        var eat = function() {
+            console.log("Eating");
+        }
+        eat();
+        work(eat); //work(eat());
+        work(function () { console.log("Scratching my head"); });
+    </script>
+</head>
+<body>
+
+</body>
+</html>
