@@ -1,0 +1,50 @@
+﻿<html>
+<head>
+    <link href="touch/resources/css/sencha-touch.css" rel="stylesheet" type="text/css" />
+    <script src="touch/sencha-touch-all.js"></script>
+    <script>
+
+        Ext.define("Car", {
+            config: {
+                model: "",
+                yearOfMake: 2014,
+                color: ""
+            },
+            constructor: function (data) {
+                this.initConfig(data);
+            },
+            drive: function () {
+                console.log("Driving " + this.getModel());
+            }
+        });
+       
+       
+        Ext.define("Book", {
+            config: {
+                title: "",
+                price: 0,
+                authors: [],
+                publisher: ""
+            },
+            constructor: function (data) {
+                this.initConfig(data);
+            }
+        });
+
+        var b1 = Ext.create("Book", { title: "ABC", price: 100 });
+        console.log(b1.getTitle());
+        b1.setPrice(200);
+        var b2 = Ext.create("Book", { title : "XYZ",authors:["A"]});
+
+        Ext.define("Chennai.whitesRoad.Sathyam", {});
+        Ext.create("Chennai.whitesRoad.Sathyam");
+
+        Ext.define("Person", {});
+        var p1 = Ext.create("Person", {});
+        var p2 = Ext.create("Person", {});
+    </script>
+</head>
+<body>
+
+</body>
+</html>

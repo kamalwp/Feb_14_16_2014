@@ -2,7 +2,11 @@
 <head>
     <script>
         //Make this code work without adding sencha js file
-
+        var Ext = {
+            application: function (jsonObj) {
+                jsonObj.launch();
+            }
+        };
         Ext.application({
             launch: function () {
                 alert("Hello World");
