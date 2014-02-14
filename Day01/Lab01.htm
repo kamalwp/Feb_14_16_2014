@@ -1,0 +1,95 @@
+﻿<html>
+<head>
+    <style>
+        .wrong 
+        {
+            color : Red;    
+        }
+        .correct
+        {
+            color : Blue;    
+        }
+    </style>
+    <link href="touch/resources/css/sencha-touch.css" rel="stylesheet" type="text/css" />
+    <script src="touch/sencha-touch-all.js"></script>
+    <script>
+        function login() {
+            var userName = Ext.getCmp("usernametext");
+            var password = Ext.getCmp("passwordtext");
+            var message = Ext.getCmp("messagelabel");
+            if (userName.getValue() == "admin" &&
+                password.getValue() == "admin") {
+                message.setHtml("Logging in...");
+                userName.disable();
+                password.disable();
+                Ext.getCmp("loginbutton").disable();
+                Ext.getCmp("resetbutton").disable();
+                message.setCls("correct");
+            }
+            else {
+                message.setHtml("Invalid credentials");
+                message.setCls("wrong");
+            }
+        }
+        function reset() {
+            Ext.getCmp("usernametext").setValue("");
+            Ext.getCmp("passwordtext").setValue("");
+            message.setHtml("");
+        }
+        Ext.application({
+            launch: function () {
+                Ext.create("Ext.Panel", {
+                    title: "iLink",
+                    titleAlign :"center",
+                    fullscreen: true,
+                    items: [
+                        {
+                            xtype : "titlebar",
+                            title : "iLink",
+                            titleAlign : "center",
+                            height : "4%"
+                        },
+                        {
+                            xtype: "textfield",
+                            label: "User name",
+                            labelWidth : "50%",
+                            id: "usernametext"
+                        },
+                        {
+                            xtype: "passwordfield",
+                            label: "Password",
+                            labelWidth : "50%",
+                            id: "passwordtext"
+                        },
+                        {
+                            xtype: "button",
+                            text: "Login",
+                            ui: "confirm",
+                            id: "loginbutton",
+                            listeners: {
+                                tap: login
+                            }
+                        },
+                        {
+                            xtype: "button",
+                            text: "Reset",
+                            id: "resetbutton",
+                            listeners: {
+                                tap: reset
+                            }
+                        },
+                        {
+                            xtype : "label",
+                            id: "messagelabel",
+                            html: ""
+                        }
+                    ]
+                });
+            }
+        });
+    </script>
+</head>
+<body>
+
+</body>
+</html>
